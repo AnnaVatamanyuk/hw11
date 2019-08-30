@@ -118,6 +118,8 @@ button {
 
 .row {
     margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .row:after {
@@ -128,7 +130,6 @@ button {
 
 .col {
     padding: 0 15px;
-    float: left;
 }
 
 .col-2 {
@@ -187,6 +188,37 @@ button {
     opacity: .7;
 }
 
+.d_f{
+    display: flex;
+}
+
+.fw_w{
+    flex-wrap: wrap;
+}
+
+.jc_sb{
+    justify-content: space-between;
+}
+
+.jc_fe{
+    justify-content: flex-end;
+}
+ .ai_c{
+     align-items: center;
+ }
+
+ .ai_fe{
+     align-items: flex-end;
+ }
+
+ .fd_c{
+    flex-direction: column;
+ }
+
+ .as_c{
+     align-self: center;
+ }
+
 /*HEADER*/
 
 header {
@@ -197,13 +229,14 @@ header {
     padding: 30px;
 }
 
-.logo {
-    float: left
+.nav {
+    width: calc(100% - 140px);
+    color: #fff;
 }
 
-.nav {
-    float: right;
-    color: #fff;
+.nav ul{
+    width: calc(100% + 30px);
+    margin: 0 -15px;
 }
 
 .nav li:hover {
@@ -211,12 +244,8 @@ header {
 }
 
 .nav li {
-    float: left;
     line-height: 20px;
-}
-
-.nav li + li {
-    padding-left: 35px;
+    padding: 5px 15px;
 }
 
 .nav_opener{
@@ -241,15 +270,15 @@ header {
 }
 
 .banner_title {
+    margin-bottom: 100px;
     color: #fefefe;
     letter-spacing: 35px;
     text-transform: uppercase;
     font-style: normal;
-    padding-top: 250px;
 }
 
 .banner_text {
-    padding: 100px 0 10px;
+    padding: 0 10px;
     font-size: 19px;
     color: #d2d2d2;
 }
@@ -342,12 +371,11 @@ header {
     outline: none;
 }
 
-.services_list li {
-    display: block;
-    float: left;
+.services_list {
     padding: 0 15px;
-    width: calc(100% / 5);
-    text-align: center;
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .services_list a {
@@ -411,12 +439,8 @@ header {
     width: 100%;
 }
 
-.portfolio_list li {
-    display: block;
-    float: left;
-    width: calc(100% / 4);
+.portfolio_list {
     padding: 0 30px;
-    text-align: center;
 }
 
 .portfolio_list a {
@@ -488,7 +512,6 @@ header {
     background-color: #cfcfcf;
     color: #111;
     margin: 0 45px;
-    float: none;
     padding: 15px 40px;
 }
 
@@ -516,6 +539,10 @@ header {
 
 .slide_section{
     background-color: #020202;
+}
+
+.slide_section .row{
+    display: block;
 }
 
 .slide_section .slider{
@@ -633,12 +660,7 @@ header {
     overflow: hidden;
 }
 
-.latest_news_section .title_holder h2 {
-    float: left;
-}
-
 .latest_news_section .title_holder .all_blog {
-    float: right;
     color: #999;
     font-family: 'dosisregular', sans-serif;
     text-transform: uppercase;
@@ -656,9 +678,8 @@ header {
 
 .latest_news_section .all_blog i {
     position: absolute;
-    top: 50%;
+    top: 3px;
     right: 0;
-    transform: translateY(-50%);
 }
 
 .article_news .img_holder img {
@@ -734,12 +755,6 @@ header {
     background-color: #323232;
 }
 
-.newsletter_section .input_holder{
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0;
-}
-
 .newsletter_section .information .icon_information{
     left: 80px;
 }
@@ -752,6 +767,7 @@ header {
 
 .contact_section h2{
     margin: 0 0 70px;
+    width: 100%;
 }
 
 .contact_section .col{
@@ -809,6 +825,12 @@ header {
     left: -5px;
 }
 
+.contact_section .contact_form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .input_holder{
     margin: 0 0 10px;
 }
@@ -829,10 +851,14 @@ header {
     height: 36px;
 }
 
+.input_holder{
+    width: 100%;
+}
+
 .input_holder textarea{
     resize: none;
     height: 82px;
-    max-width: 365px;
+    width: 100%;
 }
 
 .btn_form{
@@ -843,8 +869,6 @@ header {
     padding: 12px 30px;
     color: #fff;
     border-radius: 3px;
-    float: right;
-    overflow: hidden;
 }
 
 .information{
@@ -962,16 +986,12 @@ header {
 }
 
 .footer .footer_social ul li{
-    display: inline-block;
-    vertical-align: middle;
-    float: left;
     border: 1px solid #111;
     border-radius: 2px;
     height: 25px;
     width: 25px;
     transform: translateX(-50%) rotate(45deg);
     position: relative;
-    margin-right: 20px;
 }
 
 .footer .footer_social ul li:last-child {
@@ -1012,10 +1032,21 @@ header {
 
     .digital_services .img_holder{
         margin-right: 0;
+        margin-top: -130px;
     }
 
     .quote_slide .slick-dots{
         bottom: -75px;
+    }
+}
+
+@media(max-width:875px){
+    .banner_title{
+        letter-spacing: 30px;
+    }
+
+    .banner_text{
+        font-size: 17px;
     }
 }
 
@@ -1046,9 +1077,8 @@ header {
     }
 
     .nav_opener{
-        display: block;
+        display: flex;
         position: relative;
-        float: right;
         background-color: transparent;
         border: none;
         width: 30px;
@@ -1097,11 +1127,10 @@ header {
     }
 
     .nav{
-        float: none;
         position: absolute;
         top: 85px;
         left: 0;
-        right: 0;
+        width: 100%;
         z-index: 100;
         background-color: #fff;
         color: #777;
@@ -1112,8 +1141,13 @@ header {
         transition: .3s all ease-in-out;
     }
 
+    .nav ul{
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .nav li{
-        float: none;
         padding: 0 15px 15px;
         text-align: center;
     }
@@ -1140,7 +1174,7 @@ header {
     }
 
     .digital_services .img_holder{
-        margin-top: -100px;
+        margin-top: -90px;
     }
 
     .choose_section .row:not(:last-child) {
@@ -1156,6 +1190,23 @@ header {
     }
 }
 
+@media(max-width: 740px){
+
+    .banner_title{
+        letter-spacing: 30px;
+        padding-top: 0;
+    }
+
+    .banner_text{
+        font-size: 15px;
+    }
+
+    .btn_banner:before {
+        left: -2px;
+        top: 3px;
+    }
+}
+
 @media (max-width: 624px){
     h2 {
         font-size: 16px;
@@ -1167,7 +1218,6 @@ header {
     }
 
     .banner_title{
-        padding-top: 100px;
         letter-spacing: 22px;
     }
 
@@ -1216,25 +1266,34 @@ header {
         letter-spacing: 2px;
     }
 
-    .contact_section .container .icon_holder:before {
-        left: -13px;
-        top: 13px;
-        border: 13px solid transparent;
-        border-top-color: #000;
+    .latest_news_section .title_holder .all_blog {
+        font-size: 9px;
     }
 
-    .contact_section .container .icon_holder {
-        border: 13px solid transparent;
-        border-bottom-color: #000;
+    .contact_section .container .row h2 {
+        margin: 0 0 30px;
     }
 
-    .contact_section .container .icon_holder i {
-        font-size: 10px;
-        top: 8px;
+    .contact_section .col-3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .choose_section .row:not(:last-child) {
+        padding-bottom: 0;
+    }
+
+    .contact_section .container .row  .col{
+        padding: 0 15px;
+    }
+
+    .contact_section .container .icon_holder{
+        top: 20px;
+        left: 25%;
     }
 
     .contact_text {
-        margin: 0 0 80px 25px;
+        margin: 0 0 10px;
     }
 
     .input_holder textarea {
@@ -1242,41 +1301,12 @@ header {
     }
 
     .btn_form {
-        padding: 10px 20px;
+        padding: 8px 15px;
+        font-size: 10px;
     }
-
-
-    }
-
-@media (max-width: 440px) {
-
-    .banner_title {
-        letter-spacing: 18px;
-    }
-
-    .btn_form {
-        font-size: 12px;
-    }
-
-    .latest_news_section .title_holder .all_blog {
-        font-size: 8px;
-    }
-
-    .newsletter_section h2 {
-        font-size: 15px;
-    }
-
-    .newsletter_section .input_holder input {
-        width: 270px;
-    }
-
-    .newsletter_section .information .icon_information {
-        left: 72px;
-    }
-
 }
 
-@media (max-width: 425px) {
+@media (max-width: 440px) {
 
     body{
         font: 400 12px/1.7333 'open_sanslight', sans-serif;
@@ -1312,7 +1342,7 @@ header {
 
     .banner_text{
         font-size: 10px;
-        padding: 50px 0 10px;
+        padding: 0 0 45px;
     }
 
     .btn_banner{
@@ -1347,9 +1377,12 @@ header {
 
 /*SERVICES*/
 
+    .services_list{
+        text-align: center;
+        display:block;
+    }
+
     .services_list li{
-        float: none;
-        width: 100%;
         margin-bottom: 30px;
     }
 
@@ -1389,10 +1422,11 @@ header {
         padding: 55px 0 0;
     }
 
-    .portfolio_list li{
-        width: 50%;
-        margin-bottom: 30px;
-        float: left;
+    .portfolio_list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 5px;
     }
 
     #portfolio_tabs .row .col {
@@ -1502,39 +1536,11 @@ header {
 
 /*CONTACT SECTION*/
 
-    .contact_section .container .row h2 {
-        margin: 0 0 30px;
-    }
-
-    .contact_section .col-3 {
-        text-align: center;
-        width: 100%;
-    }
-
-    .choose_section .row:not(:last-child) {
-        padding-bottom: 0;
-    }
-
-    .contact_section .container .row  .col{
-        float: none;
-        padding: 0 15px;
-    }
-
-    .contact_section .container .icon_holder{
-        top: 20px;
-        left: 25%;
-    }
-
-    .contact_text {
-        margin: 0 0 10px;
-    }
-
     .contact_form{
         padding-top: 20px;
-    }
-
-    .contact_section .container .contact_form .col{
-        float: left;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .contact_section .container .contact_form .col + .col{
@@ -1729,6 +1735,11 @@ header {
         font-size: 8px;
     }
 
+    .btn_banner:before {
+        top: 30%;
+        left: 30%;
+    }
+
 /*DIGITAL SECTION*/
 
     .digital_services .text_holder a {
@@ -1737,8 +1748,16 @@ header {
 
 /*PORTFOLIO SECTION*/
 
+    .portfolio_list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+        padding: 0 30px;
+        justify-content: space-between;
+    }
+
     .portfolio_list li {
-        padding: 0 10px;
+        padding: 10px 15px;
     }
 
     .portfolio_list a {

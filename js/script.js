@@ -20,7 +20,7 @@ $( function() {
     });
 
     $('.services_list li a').click(function () {
-        if ($(window).width() <= 425) {
+        if ($(window).width() <= 440) {
             var self = this;
             $([document.documentElement, document.body]).animate({
                 scrollTop: $($(self).attr('href')).offset().top
